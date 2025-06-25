@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const students = [
+  { name: "Iswarya", mark: 85 },
+  { name: "atchu", mark: 45 },
+  { name: "Sri", mark: 75 },
+  { name: "ramesh", mark: 30 }];
+
+
+  const graded = students.map(student => {
+  return {
+    ...student,
+    grade: student.mark >= 50 ? "Pass" : "Fail"
+  };
+});
+console.log(graded);
+
+const passed = students.filter(student => student.mark >= 50);
+console.log(passed);
+
+const totalMarks = students.reduce((acc, student) => acc + student.mark, 0);
+console.log("Total Marks:", totalMarks)
+
+
+
+
+
+
+
+try {
+  let input = prompt("Enter a number:");
+  let num = Number(input);
+
+  if (isNaN(num)) {
+    throw new Error("Invalid number entered.");
+  }
+
+  alert("You entered: " + num);
+} catch (e) {
+  alert(" Error: " + e.message);
+} finally {
+  alert("Thank you ");
+}
+
+
+
+</script>
+    
+</body>
+</html>

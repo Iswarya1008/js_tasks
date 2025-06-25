@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stone Paper Scissors</title>
+</head>
+<body>
+  <script>
+    let play = confirm("Do you want to start playing?");
+
+    if (play) {
+      let userChoice = prompt("Enter stone, paper, or scissors").toLowerCase();
+
+      if (userChoice !== "stone" && userChoice !== "paper" && userChoice !== "scissors") {
+        alert("Invalid input! Please refresh and enter stone, paper, or scissors.");
+      } else {
+        const options = ["stone", "paper", "scissors"];
+        const randomIndex = Math.floor(Math.random() * 3);
+        const computerChoice = options[randomIndex];
+
+        let result = "";
+
+        if (userChoice === computerChoice) {
+          result = "It's a draw!";
+        } else if (
+          (userChoice === "stone" && computerChoice === "scissors") ||
+          (userChoice === "paper" && computerChoice === "stone") ||
+          (userChoice === "scissors" && computerChoice === "paper")
+        ) {
+          result = "You win!";
+        } else {
+          result = "Computer wins!";
+        }
+
+        alert("You chose: " + userChoice + "/nComputer chose: " + computerChoice + "/nResult: " + result);
+      }
+    } else {
+      alert("better luck next time!");
+    }
+  </script>
+</body>
+</html>

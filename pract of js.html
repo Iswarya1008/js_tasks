@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title >Document</title>
+</head>
+<body>
+  <script>
+    let a = undefined;
+    console.log(typeof a);
+     let x = "data";
+     let y = 26;
+     console.log(x + y);
+    let z = x.charAt(0);
+    console.log(z);
+    const array =[1,2,3,4,5];
+    let index = array . lastIndexOf("5");
+    console.log(index);
+    let str ="1";
+    let strr ="2";
+    str1 = Number( str);
+    str2 =Number(strr);
+    console.log( typeof str1);
+    let add = str1 + str2;
+    console.log(add);
+    var c ="hello";
+    c1 = Number(c);
+    console.log(c1);
+    var b= 2;
+    b1 = Number.isInteger(b);
+    console.log(b1);
+  let intNum = parseInt("42abc");     
+  let floatNum = parseFloat("4.5xyz"); 
+console.log(intNum);    
+console.log(floatNum); 
+
+     var num = 3.123345;
+    console.log( num.toFixed(2));
+
+    // array
+
+   let $arr =["ish","sri","jaysri","nithiya"];
+     delete $arr[2];
+       $arr.splice(3,1);
+     console.log($arr);
+  //   let $arr1 = $arr.pop("sri");      //  pop means last Element will del, shift means  first element  
+  //  console.log($arr1);
+  //  let $arr2 = $arr. push("moni");      //push,unshift
+  //   console.log($arr2);
+   
+  let str5 = "JavaScript";
+let part = str5.slice(4, 10);
+console.log(part);  
+let ex1 = str5.split("").reverse().join("");
+console.log(ex1); 
+
+arr1 = ["one","two",];
+arr2 = ["three","four"];
+arr3 = arr1.concat(arr2);
+console.log(arr3);
+
+let obj=
+{
+  studentname : "iswarya",
+  rollno : "11234",
+  clg: "DSCET",
+ 
+
+  newfun: function(){
+     console.log("Hello, I am " + this.studentname);
+
+
+      const child = ()=>{
+      console.log("my roll number is " +this.rollno);
+     }
+     child();
+    }}
+  
+console.log(obj);
+obj.newfun();
+
+
+    
+
+
+      
+
+
+    
+
+
+
+
+     
+
+    </script>
+</body>
+</html>

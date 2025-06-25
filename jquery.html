@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Set/Get/Message/Toggle</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .box {
+      padding: 20px;
+      margin-top: 10px;
+      background-color: lightgray;
+      border: 2px solid #ccc;
+      width: 300px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .open {
+      background-color: lightgreen;
+    }
+    .close {
+      background-color: tomato;
+    }
+    #message {
+      margin-top: 10px;
+      font-size: 18px;
+      color: darkblue;
+      font-weight: 500;
+    }
+
+    /* Animate box */
+    #animateBox {
+      width: 100px;
+      height: 100px;
+      background-color: cornflowerblue;
+      position: relative; /* Required for movement */
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+    <!-- set and get -->
+
+  <input type="text" id="myInput" placeholder="Enter your name">
+  <br><br>
+
+  <button id="setBtn">Set</button>
+  <button id="getBtn">Get</button>
+  <button id="toggleBtn">Toggle Class</button>
+
+  <div id="message"></div>
+
+  <div id="toggleBox" class="box close">CLOSE</div>
+
+  <script>
+    // Set value only
+    $('#setBtn').click(function() {
+      $('#myInput').val('Iswarya');
+      $('#message').text('');
+    });
+
+    // Get value and show message
+    $('#getBtn').click(function() {
+      let name = $('#myInput').val();
+      if(name.trim() !== '') {
+        $('#message').text('Hello ' + name + ' , its nice ');
+      } else {
+        $('#message').text('Please enter a name first!');
+      }
+    });
+
+    // Toggle box class
+    $('#toggleBtn').click(function() {
+      $('#toggleBox').toggleClass('open close');
+      if ($('#toggleBox').hasClass('open')) {
+        $('#toggleBox').text(' OPEN');
+      } else {
+        $('#toggleBox').text(' CLOSE');
+      }
+    });
+  </script>
+
+<!-- Button click event -->
+<button id="myBtn">Click me</button>
+<p id="result"></p>
+
+<script>
+  $('#myBtn').click(function() {
+    $('#result').text('You clicked the button!');
+  });
+</script>
+
+<!-- Dropdown event -->
+<select id="dropdown">
+  <option value="">Choose</option>
+  <option value="Apple">Apple</option>
+  <option value="Banana">Banana</option>
+</select>
+<p id="fruit"></p>
+
+<script>
+  $('#dropdown').change(function() {
+    let fruit = $(this).val();
+    $('#fruit').text('You selected: ' + fruit);
+  });
+</script>
+
+<!-- Hover event -->
+<div id="hoverBox" style="width:100px;height:100px;background:gray;"></div>
+
+<script>
+  $('#hoverBox').hover(
+    function() {
+      $(this).css('background', 'green');
+      $('#hoverBox').text("hello");
+    },
+    function() {
+      $(this).css('background', 'gray');
+      $('#hoverBox').text("");
+    }
+  );
+</script>
+
+<!-- Form submit -->
+<form id="myForm">
+  <input type="text" id="userName" placeholder="Enter name">
+  <button type="submit">Submit</button>
+</form>
+<p id="formMsg"></p>
+
+<script>
+  $('#myForm').submit(function(e) {
+    e.preventDefault();
+    let name = $('#userName').val();
+    $('#formMsg').text('Form submitted by: ' + name);
+  });
+</script>
+
+<!-- Animate Box -->
+<div id="animateBox"></div>
+<br>
+<button id="animateBtn">Animate Box</button>
+
+<script>
+  $('#animateBtn').click(function() {
+    $('#animateBox').animate({
+      width: '200px',
+      height: '200px',
+      left: '+=100px',
+      opacity: 1
+    }, 1000); // 
+  });
+</script>
+
+</body>
+</html>
+
+
+
